@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tickets/app_styles.dart';
 import 'package:tickets/screens/bottom_bar.dart';
 
 void main() {
@@ -12,8 +13,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Book Tickets',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: primary,
       ),
       home: const BottomBar() ,
     );
