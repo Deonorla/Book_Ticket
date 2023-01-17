@@ -2,7 +2,7 @@ import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:tickets/app_styles.dart';
+import 'package:tickets/utils/app_styles.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -60,7 +60,20 @@ class HomeScreen extends StatelessWidget {
                       )
                     ],
                   ),
-                )
+                ),
+                const Gap(40),
+                 Row(
+                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                   children: [
+                     Text("Upcoming Flight", style: Styles.headLineStyle2),
+                     InkWell(
+                       onTap: (){
+                         print("You are tapped");
+                       },
+                         child: Text("View all", style: Styles.textStyle.copyWith(color: Styles.primaryColor))
+                     )
+                   ],
+                 )
               ],
             ),
           )
