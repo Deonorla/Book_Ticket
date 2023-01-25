@@ -6,6 +6,8 @@ import 'package:tickets/screens/ticket_view.dart';
 import 'package:tickets/utils/app_info_list.dart';
 import 'package:tickets/utils/app_styles.dart';
 
+import '../utils/app_layout.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -16,7 +18,7 @@ class HomeScreen extends StatelessWidget {
       body: ListView(
         children: [
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding:  EdgeInsets.symmetric(horizontal: AppLayout.getWidth(20)),
             child: Column(
               children: [
                 const Gap(40),
@@ -32,10 +34,10 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                     Container(
-                      width: 50,
-                      height: 50,
+                      width: AppLayout.getWidth(50),
+                      height: AppLayout.getHeight(50),
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(AppLayout.getHeight(10)),
                         image: const DecorationImage(
                           fit: BoxFit.cover,
                           image: AssetImage(
@@ -48,9 +50,9 @@ class HomeScreen extends StatelessWidget {
                 ),
                 const Gap(25),
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                  padding:  EdgeInsets.symmetric(horizontal: AppLayout.getWidth(10), vertical: AppLayout.getHeight(10)),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(AppLayout.getHeight(10)),
                     color: const Color(0xFFF4F6FD)
                   ),
                   child: Row(
@@ -82,14 +84,14 @@ class HomeScreen extends StatelessWidget {
           const Gap(16),
            SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            padding: const EdgeInsets.only(left: 20),
+            padding: EdgeInsets.only(left: AppLayout.getWidth(20)),
             child: Row(
               children: ticketList.map((ticketInfo) => TicketView(ticket: ticketInfo)).toList()
             ),
           ),
           const Gap(16),
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding: EdgeInsets.symmetric(horizontal: AppLayout.getWidth(20)),
               child:  Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -106,7 +108,7 @@ class HomeScreen extends StatelessWidget {
           const Gap(16),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            padding: const EdgeInsets.only(left: 20),
+            padding: EdgeInsets.only(left: AppLayout.getWidth(20)),
             child: Row(
               children: hotelList.map((singleHotelList) => HotelScreen(hotel: singleHotelList)).toList()
             ),
