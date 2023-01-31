@@ -5,8 +5,9 @@ import '../utils/app_layout.dart';
 import '../utils/app_styles.dart';
 
 class AppIconText extends StatelessWidget{
-  final IconData icon;
-  final String text;
+  final IconData icon; //data type icon
+  final String text; // String text
+
   const AppIconText({Key ? key, required this.icon, required this.text}) : super(key: key);
   @override
   Widget build(BuildContext context){
