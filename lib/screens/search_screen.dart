@@ -91,9 +91,9 @@ class SearchScreen extends StatelessWidget{
                   color: Colors.white,
                   boxShadow: [
                     BoxShadow(
-                       color: Colors.grey.shade200,
-                      blurRadius: 1,
-                      spreadRadius: 1
+                        color: Colors.grey.shade200,
+                        blurRadius: 1,
+                        spreadRadius: 1
                     )
                   ]
                 ),
