@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 import 'package:tickets/utils/app_layout.dart';
+import 'package:tickets/widgets/column_layout.dart';
 import 'package:tickets/widgets/thick_container.dart';
 import '../utils/app_styles.dart';
 
@@ -14,10 +16,11 @@ class TicketView extends StatelessWidget{
     final size = AppLayout.getSize(context);
     return SizedBox(
       width: size.width*0.85,
-      height: AppLayout.getHeight(200),
+      height: AppLayout.getHeight(GetPlatform.isAndroid==true ? 167 : 169),
       child: Container(
-        margin: EdgeInsets.only(right: AppLayout.getHeight(16)),
+        margin : EdgeInsets.only(right: AppLayout.getHeight(16)),
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             // Container showing the blue part of the card/ticket
             Container(
@@ -151,8 +154,8 @@ class TicketView extends StatelessWidget{
              decoration: BoxDecoration(
                color: isColor == null ? Styles.orangeColor : Colors.white,
                borderRadius:  BorderRadius.only(
-                 bottomRight: Radius.circular(AppLayout.getHeight(21)),
-                 bottomLeft: Radius.circular(AppLayout.getHeight(21))
+                 bottomRight: Radius.circular(isColor==null ? AppLayout.getHeight(21) : 0),
+                 bottomLeft: Radius.circular(isColor==null ? AppLayout.getHeight(21) : 0)
                )
              ),
               child: Column(
@@ -160,42 +163,9 @@ class TicketView extends StatelessWidget{
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                           Text(ticket['date'],
-                            style: isColor == null ? Styles.headLineStyle3.copyWith(color: Colors.white
-                            ) : Styles.headLineStyle3),
-                          const Gap(5),
-                          Text("Date",
-                          style:  isColor == null ? Styles.headLineStyle4.copyWith(color: Colors.white
-                          ) : Styles.headLineStyle4)
-                        ],
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(ticket['departure_time'],
-                              style: isColor == null ? Styles.headLineStyle3.copyWith(color: Colors.white
-                              ): Styles.headLineStyle3),
-                          const Gap(5),
-                          Text("Departure time",
-                              style:  isColor == null ? Styles.headLineStyle4.copyWith(color: Colors.white
-                              ): Styles.headLineStyle4)
-                        ],
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                           Text(ticket['number'].toString() ,
-                            style:  isColor == null ? Styles.headLineStyle3.copyWith(color: Colors.white
-                            ): Styles.headLineStyle3),
-                          const Gap(5),
-                          Text("Number",
-                          style:  isColor == null ? Styles.headLineStyle4.copyWith(color: Colors.white
-                          ): Styles.headLineStyle4  )
-                        ],
-                      )
+                      AppColumnLayout(firstText: ticket['date'], secondText: "Date", alignment: CrossAxisAlignment.start, isColor: true,),
+                      AppColumnLayout(firstText: ticket['departure_time'], secondText: "Departure time", alignment: CrossAxisAlignment.center, isColor: true,),
+                      AppColumnLayout(firstText: ticket['number'].toString(), secondText: "Number", alignment: CrossAxisAlignment.end, isColor: true,),
                     ],
                   )
                 ],
