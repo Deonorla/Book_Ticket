@@ -7,6 +7,8 @@ import 'package:tickets/utils/app_styles.dart';
 import 'package:tickets/widgets/column_layout.dart';
 import 'package:tickets/widgets/ticket_tabs.dart';
 
+import '../widgets/layout_builder_widget.dart';
+
 class TicketScreen extends StatelessWidget{
   const TicketScreen({Key?key}):super(key:key);
   @override
@@ -27,8 +29,9 @@ class TicketScreen extends StatelessWidget{
                   padding: EdgeInsets.only(left: AppLayout.getHeight(15)),
                   child: TicketView(ticket: ticketList[1], isColor: true),
                 ),
+                const SizedBox(height: .5,),
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: AppLayout.getHeight(18)),
+                  padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
                   margin: EdgeInsets.only(right: AppLayout.getWidth(16), left: AppLayout.getWidth(15)),
                   color: Colors.white,
                   child: Column(
@@ -39,8 +42,19 @@ class TicketScreen extends StatelessWidget{
                         AppColumnLayout(firstText: 'Flutter DB', secondText: 'Passenger', alignment: CrossAxisAlignment.start, isColor: true,),
                         AppColumnLayout(firstText: '77656 4G6H3Q', secondText: 'Passport', alignment: CrossAxisAlignment.end, isColor: true,),
                         ],
-                      )
-
+                      ),
+                      Gap(AppLayout.getHeight(20)),
+                      const AppLayoutBuilderWidget(sections: 15, isColor: true, width: 5,),
+                      Gap(AppLayout.getHeight(20)),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: const [
+                          AppColumnLayout(firstText: '5643 450 98787', secondText: 'Number of E-ticket', alignment: CrossAxisAlignment.start, isColor: true,),
+                          AppColumnLayout(firstText: 'B2SG28', secondText: 'Booking Code', alignment: CrossAxisAlignment.end, isColor: true,),
+                        ],
+                      ),
+                      Gap(AppLayout.getHeight(20)),
+                      const AppLayoutBuilderWidget(sections: 15, isColor: true, width: 5,),
                     ],
                   ),
                 )
