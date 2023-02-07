@@ -6,8 +6,8 @@ import 'package:tickets/utils/app_layout.dart';
 import 'package:tickets/utils/app_styles.dart';
 import 'package:tickets/widgets/column_layout.dart';
 import 'package:tickets/widgets/ticket_tabs.dart';
-
 import '../widgets/layout_builder_widget.dart';
+import 'package:barcode_widget/barcode_widget.dart';
 
 class TicketScreen extends StatelessWidget{
   const TicketScreen({Key?key}):super(key:key);
@@ -29,7 +29,7 @@ class TicketScreen extends StatelessWidget{
                   padding: EdgeInsets.only(left: AppLayout.getHeight(15)),
                   child: TicketView(ticket: ticketList[1], isColor: true),
                 ),
-                const SizedBox(height: .5,),
+                const SizedBox(height: .5),
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
                   margin: EdgeInsets.only(right: AppLayout.getWidth(16), left: AppLayout.getWidth(15)),
@@ -78,10 +78,47 @@ class TicketScreen extends StatelessWidget{
                             isColor: true,
                           )
                         ],
-                      )
+                      ),
+                      const SizedBox(height: .5,),
                     ],
                   ),
-                )
+                ),
+
+                /*
+                Bar Code
+                  */
+                const SizedBox(height: .5),
+                Container(
+                  margin: EdgeInsets.only(left:AppLayout.getHeight(15), right: AppLayout.getHeight(15)),
+                  padding: EdgeInsets.only(top:AppLayout.getHeight(15), bottom: AppLayout.getHeight(15)),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(AppLayout.getHeight(21)),
+                          bottomRight: Radius.circular(AppLayout.getHeight(21))
+                    )
+                  ),
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: AppLayout.getHeight(15)),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(AppLayout.getHeight(15)),
+                      child: BarcodeWidget(
+                        barcode: Barcode.code128(),
+                        data: 'https://github.com/deonorla',
+                        drawText: false,
+                        color: Styles.textColor,
+                        width: double.infinity,
+                        height: 70,
+
+                      ),
+                    ),
+                  ),
+                ),
+                Gap(AppLayout.getHeight(20)),
+                Container(
+                  padding: EdgeInsets.only(left: AppLayout.getHeight(15)),
+                  child: TicketView(ticket: ticketList[1],),
+                ),
           ])
         ]),
     );
