@@ -87,10 +87,11 @@ class TicketScreen extends StatelessWidget{
                 /*
                 Bar Code
                   */
+
                 const SizedBox(height: .5),
                 Container(
                   margin: EdgeInsets.only(left:AppLayout.getHeight(15), right: AppLayout.getHeight(15)),
-                  padding: EdgeInsets.only(top:AppLayout.getHeight(15), bottom: AppLayout.getHeight(15)),
+                  padding: EdgeInsets.only(top:AppLayout.getHeight(20), bottom: AppLayout.getHeight(20)),
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
