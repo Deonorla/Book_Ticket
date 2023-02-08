@@ -83,6 +83,7 @@ class TicketScreen extends StatelessWidget{
                     ],
                   ),
                 ),
+
                 /*
                 Bar Code
                   */
