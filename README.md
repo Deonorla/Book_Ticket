@@ -4,13 +4,8 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+An IOS Ticket Booking App 
 
-A few resources to get you started if this is your first Flutter project:
+![Screenshot 2023-02-08 at 21 33 43](https://user-images.githubusercontent.com/91434033/217644785-7e58bd6e-636b-4144-a8c9-64da9bd5fb84.png)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
