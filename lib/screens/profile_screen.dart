@@ -36,7 +36,8 @@ class  ProfileScreen extends StatelessWidget {
                     Text('Book Tickets', style: Styles.headLineStyle1,),
                     Text('New-York', style: TextStyle(
                       fontSize: 14, fontWeight: FontWeight.w500, color: Colors.grey.shade500
-                    ),),
+                    ),
+                    ),
                     Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(AppLayout.getHeight(100)),
