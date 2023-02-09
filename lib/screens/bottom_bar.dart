@@ -2,6 +2,7 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:tickets/screens/home_screen.dart';
+import 'package:tickets/screens/profile_screen.dart';
 import 'package:tickets/screens/search_screen.dart';
 import 'package:tickets/screens/ticket_screen.dart';
 
@@ -18,7 +19,7 @@ class _BottomBarState extends State<BottomBar> {
     const HomeScreen(),
     const SearchScreen(),
     const TicketScreen(),
-    const Text("Profile")
+    const ProfileScreen()
   ];
 
   //method to changed selected button
