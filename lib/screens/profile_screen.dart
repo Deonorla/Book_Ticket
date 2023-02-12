@@ -103,7 +103,12 @@ class  ProfileScreen extends StatelessWidget {
                 ),
                 ),
                 Row(
-                  children: [],
+                  children: [
+                    CircleAvatar(
+                      maxRadius: 25,
+                      backgroundColor: Colors.white,
+                    )
+                  ],
 
                 )
               ],
