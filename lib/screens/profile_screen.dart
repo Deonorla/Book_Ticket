@@ -16,6 +16,7 @@ class  ProfileScreen extends StatelessWidget {
           children:[
             Gap(AppLayout.getHeight(40)),
             Row(
+              crossAxisAlignment: CrossAxisAlignment.center ,
               children: [
                 Container (
                   width: AppLayout.getWidth(86),
@@ -38,6 +39,7 @@ class  ProfileScreen extends StatelessWidget {
                       fontSize: 14, fontWeight: FontWeight.w500, color: Colors.grey.shade500
                     ),
                     ),
+                    Gap(AppLayout.getHeight(8)),
                     Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(AppLayout.getHeight(100)),
@@ -53,7 +55,6 @@ class  ProfileScreen extends StatelessWidget {
                             color: Color(0xFF526799),
                           ),
                             child: const Icon(FluentSystemIcons.ic_fluent_shield_filled, color: Colors.white, size: 15,),
-
                           ),
                           Gap(AppLayout.getHeight(5)),
                           const Text('Premium status', style: TextStyle(
@@ -64,10 +65,49 @@ class  ProfileScreen extends StatelessWidget {
                       ),
                     )
                   ],
+                ),
+                const Spacer(),
+                Column(
+                  children: [
+                    InkWell(
+                        onTap: ()=> {
+                          print('You are tapped')
+                        },
+                        child: Text('Edit', style: Styles.textStyle.copyWith(color: Styles.primaryColor, fontWeight: FontWeight.w300),))
+                  ],
+                )
+              ],
+            ),
+            Gap(AppLayout.getHeight(40)),
+            Divider(color: Colors.grey.shade300,),
+            Stack(
+              children: [
+                Container(
+                  height: AppLayout.getHeight(90),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Styles.primaryColor,
+                    borderRadius: BorderRadius.circular(AppLayout.getHeight(18))
+                  ),
+                ),
+                Positioned (
+                  top: -40,
+                  right: -45,
+                  child: Container(
+                  padding: EdgeInsets.all(AppLayout.getHeight(30)),
+                  decoration: BoxDecoration(
+                    color: Colors.transparent,
+                      shape: BoxShape.circle,
+                      border: Border.all(width: 18, color: Color(0xFF264CD2))
+                  ),
+                ),
+                ),
+                Row(
+                  children: [],
+
                 )
               ],
             )
-
           ]
       ),
 
