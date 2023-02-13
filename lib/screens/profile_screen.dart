@@ -210,7 +210,7 @@ class  ProfileScreen extends StatelessWidget {
             ),
             Gap(AppLayout.getHeight(25)),
             InkWell(
-              onTap: ()=> print("tapped"),
+              onTap: ()=> print("tapped on"),
               child: Center(
                 child: Text('How to get more miles', style: Styles.textStyle.copyWith(
                   color: Styles.primaryColor,
