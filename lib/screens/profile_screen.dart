@@ -2,6 +2,8 @@ import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:tickets/utils/app_layout.dart';
+import 'package:tickets/widgets/column_layout.dart';
+import 'package:tickets/widgets/layout_builder_widget.dart';
 
 import '../utils/app_styles.dart';
 
@@ -78,8 +80,9 @@ class  ProfileScreen extends StatelessWidget {
                 )
               ],
             ),
-            Gap(AppLayout.getHeight(40)),
+            Gap(AppLayout.getHeight(8)),
             Divider(color: Colors.grey.shade300,),
+            Gap(AppLayout.getHeight(8)),
             Stack(
               children: [
                 Container(
@@ -102,20 +105,121 @@ class  ProfileScreen extends StatelessWidget {
                   ),
                 ),
                 ),
-                Row(
-                  children: [
-                    CircleAvatar(
-                      maxRadius: 25,
-                      backgroundColor: Colors.white,
-                    )
-                  ],
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: AppLayout.getHeight(25), vertical: AppLayout.getHeight(20)),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      CircleAvatar(
+                        child: Icon(FluentSystemIcons.ic_fluent_lightbulb_filament_filled, color: Styles.primaryColor, size: 27,),
+                        maxRadius: 25,
+                        backgroundColor: Colors.white,
+                      ),
+                      Gap(AppLayout.getHeight(12)),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'You\'ve got a new Award',
+                            style: Styles.headLineStyle2.copyWith(
+                              fontWeight: FontWeight.bold,
+                                color: Colors.white
+                            ),
+                          ),
+                          Text(
+                          'You have 95 flights this year',
+                          style: Styles.headLineStyle2.copyWith(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16,
+                              color: Colors.white.withOpacity(0.9)
+                              ),
+                          )
+                        ],
+                      )
+                    ],
 
+                  ),
                 )
               ],
+            ),
+            Gap(AppLayout.getHeight(25)),
+            Text("Accumulated miles", style: Styles.headLineStyle2),
+            Gap(AppLayout.getHeight(25)),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: AppLayout.getWidth(15)),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(AppLayout.getWidth(18)),
+                color: Styles.bgColor,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.shade200,
+                    blurRadius: 1,
+                    spreadRadius: 1
+                  )
+                ]
+              ),
+              child: Column(
+                children: [
+                  Gap(AppLayout.getHeight(15)),
+                  Text(
+                    "192802",
+                    style: TextStyle(
+                      fontSize: 45, color: Styles.textColor, fontWeight: FontWeight.w600
+                    ),
+                  ),
+                  Gap(AppLayout.getHeight(15)),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween ,
+                    children: [
+                       Text('Miles accrued', style: Styles.headLineStyle4.copyWith(fontSize: 16) ),
+                       Text('11 June 2023', style: Styles.headLineStyle4.copyWith(fontSize: 16) ),
+                    ],
+                  ), 
+                  Gap(AppLayout.getHeight(4)),
+                  Divider(color: Colors.grey.shade300,),
+                  Gap(AppLayout.getHeight(4)),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      AppColumnLayout(firstText: '23 067', secondText: "Miles", alignment: CrossAxisAlignment.start, isColor: false),
+                      AppColumnLayout(firstText: 'Airline CO', secondText: "Received from", alignment: CrossAxisAlignment.end, isColor: false)
+                    ],
+                  ),
+                  Gap(AppLayout.getHeight(12)),
+                  const AppLayoutBuilderWidget(sections: 12, isColor: false),
+                  Gap(AppLayout.getHeight(12)),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      AppColumnLayout(firstText: '86', secondText: "Miles", alignment: CrossAxisAlignment.start, isColor: false),
+                      AppColumnLayout(firstText: 'McDonal\'s', secondText: "Received from", alignment: CrossAxisAlignment.end, isColor: false)
+                    ],
+                  ),
+                  const AppLayoutBuilderWidget(sections: 12, isColor: false),
+                  Gap(AppLayout.getHeight(12)),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      AppColumnLayout(firstText: '78 534', secondText: "Miles", alignment: CrossAxisAlignment.start, isColor: false),
+                      AppColumnLayout(firstText: 'Deonorla', secondText: "Received from", alignment: CrossAxisAlignment.end, isColor: false)
+                    ],
+                  )
+                ],
+              ),
+            ),
+            Gap(AppLayout.getHeight(25)),
+            InkWell(
+              onTap: ()=> print("tapped"),
+              child: Center(
+                child: Text('How to get more miles', style: Styles.textStyle.copyWith(
+                  color: Styles.primaryColor,
+                  fontWeight: FontWeight.w500
+                )),
+              ),
             )
           ]
       ),
-
     );
   }
 }
