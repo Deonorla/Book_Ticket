@@ -1,4 +1,4 @@
-# tickets
+# Tickets App
 
 A new Flutter project.
 
