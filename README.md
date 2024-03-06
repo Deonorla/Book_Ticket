@@ -1,4 +1,4 @@
-# Tickets App
+# Ticket App
 
 ## An Ios ticket booking app built with flutter.
 
